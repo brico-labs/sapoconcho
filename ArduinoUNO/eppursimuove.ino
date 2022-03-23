@@ -22,37 +22,6 @@ void drive(int L, int R, int t) //velocidad de las ruedas izquierda y derecha, p
 {
   L=constrain(L,-255,255); // evitar valores no válidos para el PWM
   R=constrain(R,-255,255);
-  
-  if (L>0)
-  {
-    digitalWrite(AIN1, 0);
-    analogWrite(AIN2, L));
-  }
-  else
-  {
-    digitalWrite(AIN1, 1);
-    analogWrite(AIN2, 255-L);
-  }
-  
-  if (R>0)
-  {
-    digitalWrite(BIN1, 0);
-    analogWrite(BIN2, R));
-  }
-  else
-  {
-    digitalWrite(BIN1, 1);
-    analogWrite(BIN2, 255-R);
-  }
-  
-  delay(t);
-}
-
-//función de movimiento de motores
-void drive(int L, int R, int t) //velocidad de las ruedas izquierda y derecha, positivo hacia delante, tiempo en milisegundos
-{
-  L=constrain(L,-255,255); // evitar valores no válidos para el PWM
-  R=constrain(R,-255,255);
 
   digitalWrite(AIN1, L<0);
   analogWrite(AIN2, L+255*(L<0));
