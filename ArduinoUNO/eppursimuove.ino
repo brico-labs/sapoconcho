@@ -14,7 +14,10 @@ void setup() {
 
 //programa principal
 void loop(){
-  
+  drive(200,200,1000); // movimiento hacia delante
+  drive(-200,-200,1000); // movimiento hacia atrás
+  drive(200,-200,1000); // giro a la derecha
+  drive(-200,200,1000); // giro a la izquierda
 }
 
 //función de movimiento de motores
