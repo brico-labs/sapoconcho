@@ -1,36 +1,27 @@
-// Based on mClon project
-
-//
- 
-int trig = 12;        // trigger PIN
-int echo = 12;        // echo PIN
-long time;
-long dist;
- 
+// Configuración:
 void setup(){
   Serial.begin(9600);
-
 }
 
 // Programa:
- 
 void loop(){
-  
-  dist = us_read();
-  
-  Serial.print(dist);
+  unsigned long distancia = sonar(2);    // invocamos a función de medir distancia
+  Serial.print("Distancia: ");  // imprimimos os valores na consola
+  Serial.print(distancia);
   Serial.println(" cm");
-  delay(200);
+
 }
 
-lond dist = us_read(){
-  digitalWrite(trig,LOW); 
-  delayMicroseconds(5);
+// Función
+unsigned long sonar(int trig){
   pinMode(trig, OUTPUT);
-  digitalWrite(trig, HIGH);     // ultrasonic pulse
+  digitalWrite(trig,LOW); // trigger envia un pulso ultrasónico
+  delayMicroseconds(5);
+  digitalWrite(trig, HIGH);     
   delayMicroseconds(10);
-  pinMode(echo, INPUT);
-  time=pulseIn(echo, HIGH,200);    // time to echo. 200 microseconds limit
-  dist= int(0.017*time);  // distance calculation
+    pinMode(trig, INPUT);
+  unsigned long tiempo=pulseIn(trig, HIGH,3000);    // echo espera a recibir la respuesta
+  unsigned long distancia= int(0.017*tiempo);  // fórmula para calcular la distancia
+  delay(200);
+  return distancia;
 }
- 
