@@ -22,8 +22,7 @@ unsigned long sonar(int trig)
   digitalWrite(trig, HIGH);     
   delayMicroseconds(10);
   pinMode(trig, INPUT);
-  unsigned long tiempo=pulseIn(trig, HIGH,3000);    // echo espera a recibir la respuesta
-  unsigned long distancia= int(0.017*tiempo);  // fórmula para calcular la distancia
-  delay(200);
+  unsigned long tiempo=pulseIn(trig, HIGH);    // echo espera a recibir la respuesta
+  unsigned long distancia= int(0.17*tiempo);  // fórmula para calcular la distancia
   return distancia;
 }
