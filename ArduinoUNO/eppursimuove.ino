@@ -1,8 +1,8 @@
 //Arduino UNO y driver TB6612/DRV8833
-const int AIN2 = 9; // PWMA
-const int AIN1 = 8;
-const int BIN1 = 7;
-const int BIN2 = 6; // PWMB
+#define AIN2 9 // PWMA
+#define AIN1 8 // direccion motor A
+#define BIN1 7 // direccion motor B
+#define BIN2 6 // PWMB
 
 //iniciar el modo de los pines para los motores
 void setup() {
