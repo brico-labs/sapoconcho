@@ -12,8 +12,8 @@ translate([-44,34,-1])cylinder(d=3.2,h=5);
 translate([44,-34,-1])cylinder(d=3.2,h=5);    
 translate([-44,-34,-1])cylinder(d=3.2,h=5); 
 hull(){
-translate([0,-5,0])cylinder(d=20,h=5);
-translate([0,19,0])cylinder(d=20,h=5);
+translate([0,-5,-1])cylinder(d=20,h=5);
+translate([0,19,-1])cylinder(d=20,h=5);
 }
 translate([15,11.5,0])cylinder(d=3.2,h=30);    
 translate([-15,11.5,0])cylinder(d=3.2,h=30); 
@@ -44,6 +44,6 @@ cube([12,26,9],center=true);
 cylinder(d=3,h=0.001,$fn=12);
 }
 translate([0,-1,1])cube([12.5,28,15],center=true);
-translate([0,-18,1])cube([17,30,9],center=true);
+translate([0,-25,1])cube([17,30,9],center=true);
 }
 }
