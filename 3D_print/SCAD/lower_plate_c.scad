@@ -17,12 +17,12 @@ translate([0,19,-1])cylinder(d=20,h=5);
 }
 translate([15,11.5,0])cylinder(d=3.2,h=30);    
 translate([-15,11.5,0])cylinder(d=3.2,h=30); 
-rotate([0,0,15])translate([0,43,0])cylinder(d=2.8,h=30); 
-rotate([0,0,-15])translate([0,43,0])cylinder(d=2.8,h=30);
+rotate([0,0,15])translate([0,43,-1])cylinder(d=2.8,h=30); 
+rotate([0,0,-15])translate([0,43,-1])cylinder(d=2.8,h=30);
 rotate([0,0,15])translate([0,37,3.5])
-cube([12.5,42,5],center=true);
+cube([11.5,42,5],center=true);
 rotate([0,0,-15])translate([0,37,3.5])
-cube([12.5,42,5],center=true);
+cube([11.5,42,5],center=true);
 }
 
 module ballcaster(){
@@ -40,10 +40,10 @@ translate([0,0,12])cube(size=[3,15,16],center=true);
 module irshade(){
 difference(){
 minkowski(){
-cube([12,26,9],center=true);
+cube([11.5,26,9],center=true);
 cylinder(d=3,h=0.001,$fn=12);
 }
-translate([0,-1,1])cube([12.5,28,15],center=true);
+translate([0,-1,1])cube([11.5,28,15],center=true);
 translate([0,-25,1])cube([17,30,9],center=true);
 }
 }
