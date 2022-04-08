@@ -10,7 +10,7 @@ void loop()
   unsigned long distancia = sonar(2);    // invocamos a función de medir distancia
   Serial.print("Distancia: ");  // imprimimos los valores en la consola
   Serial.print(distancia);
-  Serial.println(" cm");
+  Serial.println(" mm");
 }
 
 // Función
