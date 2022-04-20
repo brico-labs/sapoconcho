@@ -120,7 +120,7 @@ Los montaremos con los soportes impresos con un tornillo y una tuerca.
 **Mantener la distancia**  
 Con un sensor de distancia montado de forma central probaremos la distancia a una pared. Si estamos aún lejos, avanzaremos. Si estamos muy cerca, retrocederemos para mantener la distancia. Si en vez de una pared ponemos la mano, probaremos a manejar 'a distancia' nuestro robot.
 
-![Escornabot 1 us](img/main_single_us.jpeg)
+![Sapoconcho 1 us](img/main_single_us.jpeg)
 
 El código principal (al que añadiremos con las funciones drive y sonar) es el siguiente:
 
@@ -146,7 +146,7 @@ Como diversión si estamos trabajando en grupo podemos poner todos los robots en
 **Evitar obstáculos**  
 Con dos sensores de distancia podemos ver por donde está más cerca el obstáculo y girar hacia el lado contrario evitándolo.
 
-![Escornabot 2 us](img/dual_us.jpeg)
+![Sapoconcho 2 us](img/dual_us.jpeg)
 
 El código ahora es:
 

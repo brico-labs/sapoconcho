@@ -1,6 +1,6 @@
-# Preparar un taller de Escornabot
+# Preparar un taller de Sapoconcho
 
-El Escornabot fue conebido principalmente para impartir talleres de robótica. El público principal para el que está pensado es para niños de entre 11 y 18 años o formadores que luego utilizarán el Escornabot en sus clases. Es muy habitual y recomendable que si los niños son pequeños (11-14 años) realicen el taller acompañados por un adulto.
+El Sapoconcho fue conebido principalmente para impartir talleres de robótica. El público principal para el que está pensado es para niños de entre 11 y 18 años o formadores que luego utilizarán el Sapoconcho en sus clases. Es muy habitual y recomendable que si los niños son pequeños (11-14 años) realicen el taller acompañados por un adulto.
 
 ## Duración del taller
 Basándonos en experiencias podemos indicar las siguientes duraciones:
