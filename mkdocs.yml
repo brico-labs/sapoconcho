@@ -1,7 +1,8 @@
 site_name: Sapoconcho
 site_url: https://sapoconcho.bricolabs.cc/
-repo_name: GitHub Sapoconcho
+repo_name: Sapoconcho's GitHub
 repo_url: https://github.com/brico-labs/sapoconcho
+edit_uri: 'edit/main/docs/'
 site_description: Sapoconcho is an open-source learning robot.
 theme:
     name: readthedocs
