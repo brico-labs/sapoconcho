@@ -3,5 +3,9 @@ site_url: https://sapoconcho.bricolabs.cc/
 theme:
     name: readthedocs
 nav:
-    - Home: index.md
+    - Inicio: index.md
+    - Kit: kit.md
+    - Montaje: montaje.md
+    - Programación: programacion.md
+    - Taller: taller.md
     - About: about.md
