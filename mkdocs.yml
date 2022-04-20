@@ -1,0 +1,7 @@
+site_name: Sapoconcho
+site_url: https://sapoconcho.bricolabs.cc/
+theme:
+    name: readthedocs
+nav:
+    - Home: index.md
+    - About: about.md
