@@ -1,0 +1,7 @@
+.wy-side-nav-search {
+  background-color: #fcca00;
+}
+
+.wy-side-nav-search .wy-dropdown>a, .wy-side-nav-search>a {
+    color: #000000
+}

@@ -14,7 +14,7 @@ El chasis de Sapoconcho XL consta de las siguientes piezas:
 
 En una impresora típica de 200x200mm se pueden imprimir todas las piezas en dos tandas.
 
-![Impresion3D](assets/prusa_sapoconcho.jpg)
+![Impresion3D](img/prusa_sapoconcho.jpg)
 
 Todas las piezas están en [este repositorio de Github](https://github.com/brico-labs/sapoconcho/tree/main/3d_models). Ahí puedes encontrar los archivos originales de OpenSCAD para modificarlos a tu gusto o los STL para imprimir directamente.
 

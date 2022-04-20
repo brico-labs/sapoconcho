@@ -1,11 +1,15 @@
 site_name: Sapoconcho
 site_url: https://sapoconcho.bricolabs.cc/
+repo_name: GitHub Sapoconcho
+repo_url: https://github.com/brico-labs/sapoconcho
+site_description: Sapoconcho is an open-source learning robot.
 theme:
     name: readthedocs
+extra_css: [extra.css]
 nav:
     - Inicio: index.md
     - Kit: kit.md
     - Montaje: montaje.md
     - Programación: programacion.md
     - Taller: taller.md
-    - About: about.md
+    - Equipo: equipo.md

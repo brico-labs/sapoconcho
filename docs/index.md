@@ -2,7 +2,7 @@
 
 Sapoconcho es un robot open-source educativo con el que puedes introducirte en el mundo de la robótica y la programación. Es apropiado para niños de a partir de 11 años.
  
-![Sapoconcho](assets/main.jpeg)
+![Sapoconcho](img/main.jpeg)
 
 Está ideado con el objetivo de ser lo más accesible posible:
 
