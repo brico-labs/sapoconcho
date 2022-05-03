@@ -12,7 +12,7 @@ En la segunda -loop- es donde después escribirás el programa principal, que se
 En la tercera -drive- es donde se define la función (o subrutina) de movimiento para simplificar el programa principal.
 La función drive incluye la numeración y configuración de pines. Puede ponerse en una pestaña aparte en el IDE de Arduino, eso hará que el código principal con el setup y el loop se lea más fácil.
 
-```
+```c
 void setup() {
 
 }
@@ -92,7 +92,7 @@ El montaje del soporte a la placa superior es sencillo, con un tornillo M3x10 y 
 
 Para leer la distancia que mide el sensor usaremos una nueva función, que de nuevo podemos guardar en una pestaña nueva en el IDE para dejar más limpio el programa principal.
 
-```
+```c
 unsigned long sonar(int trig)
 {
   pinMode(trig, OUTPUT);
@@ -109,7 +109,7 @@ unsigned long sonar(int trig)
 
 El uso es sencillo, la llamamos como
 
-```
+```c
 long int distancia = sonar(pin);
 ```
 
@@ -124,7 +124,7 @@ Con un sensor de distancia montado de forma central probaremos la distancia a un
 
 El código principal (al que añadiremos con las funciones drive y sonar) es el siguiente:
 
-```
+```c
 void setup() {}
 
 void loop() {
@@ -150,7 +150,7 @@ Con dos sensores de distancia podemos ver por donde está más cerca el obstácu
 
 El código ahora es:
 
-```
+```c
 void setup() {}
 
 void loop() {
@@ -189,7 +189,7 @@ Utilizaremos sensores basados en reflexión TCRT5000 con regulador (importante) 
 **Seguir una línea**
 Para leer los sensores no necesitamos una función extra, Arduino puede hacerlo con su propia analogRead(pin). El siguiente código lee los dos sensores y si uno de ellos está sobre la línea negra gira hacia el otro lado para evitarla (necesita la función drive).
 
-```
+```c
 void setup() {}
 
 void loop()

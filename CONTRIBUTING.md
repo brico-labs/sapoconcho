@@ -1,7 +1,7 @@
 # Edit documentation
 If you want to edit this documentation you can clone the repo and do it locally. To see the result you can install mkdocs
 ```
-pip install mkdocs
+pip install mkdocs-material
 ```
 and serve the site locally
 ```
