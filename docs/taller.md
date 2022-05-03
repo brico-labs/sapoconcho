@@ -21,6 +21,7 @@ Las siguientes indicaciones pueden ahorrarnos problemas durante el taller
 - Soldar los pines del driver de motores.
 - Cortar cables breadboard a medida.
 - Soldar cables al step-up y pegarlo en el portapilas con cinta de doble cara.
+- Soldar los dos pines centrales del sensor de ultrasonidos.
 
 ### Preparativos de los participantes
 Es recomendable que los participantes traigan Arduino IDE instalado en sus portátiles de forma que evitemos problemas con la descarga o instalación durante el taller.

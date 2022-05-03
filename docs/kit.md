@@ -34,6 +34,7 @@ Todas las piezas están en [este repositorio de Github](https://github.com/brico
 - Tornillos M3 (12 ud M3x10, 4 ud M3x30, 4d M3x6).
 - Tuercas M3 (4 ud).
 - Cables Dupont M-H de 20mm y de 10mm.
+- Cable USB-A a USB-B
 
 Por si os es de utilidad, os dejamos una [lista de la compra en Amazon](https://www.amazon.es/hz/wishlist/ls/9FKST3X6WCM?viewType=list).
 
