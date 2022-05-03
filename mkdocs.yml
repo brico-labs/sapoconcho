@@ -12,6 +12,7 @@ theme:
         //scheme: slate
     favicon: img/favicon.ico
     logo: img/logo.png
+    language: es
 extra_css:
     - stylesheets/extra.css
 markdown_extensions:
