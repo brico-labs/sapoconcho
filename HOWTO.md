@@ -11,6 +11,7 @@ mkdocs serve
 
 ## Upload site
 ```
+git add -a
 git commit -m "your comment"
 git push origin main
 mkdocs gh-deploy
