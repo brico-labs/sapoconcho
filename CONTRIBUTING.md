@@ -20,4 +20,6 @@ git add --all
 git commit -m "your comment"
 git push origin nameYourBranch
 ```
-After pushing your branch you can create a Pull request on main and request a review to any of the maintainers.
+After pushing your branch you can create a Pull request on main and request a review to any of the maintainers.  
+
+NOTE: If you are not a member of bricolabs organization you will have to create a fork first.
