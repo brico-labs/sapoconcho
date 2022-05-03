@@ -19,3 +19,4 @@ jobs:
           CUSTOM_DOMAIN: sapoconcho.bricolabs.cc
           CONFIG_FILE: mkdocs.yml
           EXTRA_PACKAGES: build-base
+          REQUIREMENTS: .github/workflows/requirements.txt
