@@ -5,7 +5,7 @@
     **sapoconcho**  
     **1.** f. (*galego*) O sapoconcho (*Emys orbicularis*) é unha tartaruga da familia Emydidae e única representante do xénero Emys, que se atopa no centro e sur de Europa, Asia occidental, Norteamérica e a zona mediterránea de África.
 
-Sapoconcho es un robot open-source educativo con el que puedes introducirte en el mundo de la robótica y la programación. Es apropiado para niños de a partir de 12 años.
+Sapoconcho es un robot open-source educativo con el que puedes introducirte en el mundo de la robótica y la programación. Es apropiado para niños de a partir de 11 años.
  
 ![Sapoconcho](img/main.jpeg)
 
