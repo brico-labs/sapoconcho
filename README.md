@@ -14,6 +14,8 @@ En este repositorio encontrarás:
 - `arduino` Ejemplos de código de programación del robot.
 - `docs` Fuentes de la documentación que genera el sitio [sapoconcho.bricolabs.cc](https://sapoconcho.bricolabs.cc)
 
+Revisa nuestro [CONTRIBUTING.md](CONTRIBUTING.md) si quieres modificar este repositorio o el sitio web.
+
 Este proyecto antes estaba alojado en la wiki de bricolabs: 
 
 - https://bricolabs.cc/wiki/proyectos/montaje_sapoconcho_xl
