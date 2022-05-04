@@ -16,7 +16,8 @@ En este repositorio encontrarás:
 
 Revisa nuestro [CONTRIBUTING.md](CONTRIBUTING.md) si quieres modificar este repositorio o el sitio web.
 
-Este proyecto antes estaba alojado en la wiki de bricolabs: 
+Este proyecto antes estaba alojado en: 
 
 - https://bricolabs.cc/wiki/proyectos/montaje_sapoconcho_xl
 - https://bricolabs.cc/wiki/proyectos/sapoconcho
+- https://github.com/felixstdp/sapoconcho
