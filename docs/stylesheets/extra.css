@@ -11,7 +11,13 @@
     background-color: var(--md-default-fg-color);
 }
 
+.md-typeset :is(.admonition,details):is(.note) {
+    border-color: #ffcc00;
+}
 
+.md-typeset :is(.admonition,details) {
+    border-color: #ffcc00;
+}
 
 [data-md-color-scheme="slate"] {
 --md-hue: 110; 
