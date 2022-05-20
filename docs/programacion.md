@@ -1,4 +1,4 @@
-# Programación Sapoconcho
+# Programación de Sapoconcho
 
 Ahora que ya tienes tu Sapoconcho montado.. ¡vamos a programarlo!
 
@@ -28,202 +28,351 @@ void loop(){
 }
 ```
 
-!!! Note ""
+!!! Note "Truco"
 
-    Truco: Lo que escribas después de una doble barra "//" no se ejecutará, puedes usarlo para poner anotaciones en el código.
+    Lo que escribas después de una doble barra "//" no se ejecutará, puedes usarlo para poner anotaciones en el código.
 
 ## Función de movimiento
 Para decirle al robot que se mueva vamos a usar una función *drive* que os damos a continuación (copia y pégala al final de tu código):
 
 ```c
-// función de movimiento de motores
-// velocidad de las ruedas izquierda y derecha, positivo hacia delante, 
-// tiempo en milisegundos
-void drive(int L, int R, int t) 
+// Drive permite manejar los motores
+// Izquierda y derecha admite valores de -100 a 100
+// Tiempo en milisegundos
+void drive(int izquierda, int derecha, int tiempo) 
 {
-//Arduino UNO y driver TB6612/DRV8833
+  //Arduino UNO y driver TB6612/DRV8833
   const int AIN2 = 9; // PWMA
   const int AIN1 = 8;
   const int BIN1 = 7;
   const int BIN2 = 6; // PWMB
 
-//iniciar el modo de los pines para los motores
   pinMode(AIN1,OUTPUT);
   pinMode(AIN2,OUTPUT);
   pinMode(BIN1,OUTPUT);
   pinMode(BIN2,OUTPUT);
 
-// evitar valores no válidos para el PWM
-  L=constrain(L,-255,255);
-  R=constrain(R,-255,255);
+  izquierda=map(constrain(izquierda,-100,100),-100,100,-255,255);
+  derecha=map(constrain(derecha,-100,100),-100,100,-255,255);
 
-// poner valores a los pines
-  digitalWrite(AIN1, L<0);
-  analogWrite(AIN2, L+255*(L<0));
-  digitalWrite(BIN1, R<0);
-  analogWrite(BIN2, R+255*(R<0));
+  digitalWrite(AIN1, izquierda<0);
+  analogWrite(AIN2, izquierda + 255 * (izquierda < 0));
+  digitalWrite(BIN1, derecha < 0);
+  analogWrite(BIN2, derecha + 255 * (derecha < 0));
 
-  delay(t);
+  delay(tiempo);
 }
 ```
-Esta función nos permite decirle al robot la velocidad de la rueda derecha, rueda izquierda y un tiempo.
 
-Ahora debemos llamar a esta función, para ello prueba a copiar y pegar la siguiente linea dentro del *loop* de tu programa:
+Esta función nos permite decirle al robot la velocidad de la rueda izquierda, rueda derecha y un tiempo. La velocidad de cada rueda admite valores de -100 a 100. El tiempo debemos indicarlo en milisegundos (1 segundo son 1000).
+
+Ahora debemos llamar a esta función, para ello copia y pegar la siguiente linea dentro del *loop* de tu programa:
 ```c
-drive(200,200,1000);
+drive(50,50,1000);
 ```
 
-Ahora para enviar el código al robot debes pulsar el botón *upload* ![upload](img/upload.jpg).
+Para enviar el código al robot debes pulsar el botón *upload* ![upload](img/upload.jpg).
 
-Verás una barra de progreso y en unos pocos segundos tu robot habrá recibido su primer código!
+Verás una barra de progreso y en unos pocos segundos ¡tu robot habrá recibido su primer código!
 
-Ahora desconecta el cable USB del Sapoconcho, conéctale las pilas y comprueba que avanza hacia delante.
+Ahora desconecta el cable USB del Sapoconcho, ponle la alimentación de las pilas y comprueba que avanza hacia delante.
 
-**Movimientos de prueba**  
-El uso de la función drive es sencillo. Se llama como drive (velocidad rueda izquierda, velocidad rueda derecha, tiempo) Las velocidades pueden estar entre -255 y 255. Positivo hacia delante, negativo hacia atrás. El tiempo en milisegundos.
+??? Note "¿Sapoconcho avanza en linea recta?"
 
-Hay cuatro funciones básicas:
+    Probablemente no.. esto se debe a que no existen dos motores exactamente iguales en el mundo y aunque les ordenemos ir a la misma velocidad no podrán. Intenta ajustar los valores *izquierda* y *derecha* para que tu sapoconcho avance recto.
 
-- Movimiento hacia adelante: drive(200,200,1000); probar a cambiar los valores de velocidad y tiempo.
-- Movimiento hacia atrás: drive(-200,-200,1000);
-- Giro en redondo: drive(-200,200,1000); probar hacia donde gira.
-- Giro hacia el lado contrario: drive(200,-200,1000);
-- Parar: drive(0,0,0);
+**Movimientos de prueba**
 
-La última es importante. Si no la incluimos después de cualquiera de las otras, el robot no parará.
+Habrás notado que aunque le hemos puesto que avance un segundo Sapoconcho no para. Prueba a introducir una segunda instrucción a continuación de la anterior para indicar a sapoconcho que pare:
+
+```c
+drive(0,0,1000);
+```
+
+Si le envías este programa a Sapoconcho ahora verás que camina y para continuamente, ¡Esta es la mágia de la función *loop*! 
+
+??? note "¿Se te ocurre como hacer que pare definitivamente?"
+
+    ¡Exacto! En lugar de poner el código en el *loop* muévelo al *setup*, de esta forma sólo seguirá tus instrucciones una vez.
+
+Ahora puedes probar a jugar con las distintas opciones que nos da la función *drive* y encadenarlas para conseguir una secuencia de movimientos:
+
+- Movimiento hacia adelante: izquierda y derecha con valores positivos.
+- Movimiento hacia atrás: izquierda y derecha con valores negativos.
+- Giro en redondo: izquierda positivo, derecha negativo o viceversa.
+- Giro en avance: valor de una rueda mayor que el de la otra.
+- Parar: valores de izquierda y derecha en 0.
 
 ![Movimiento](img/movimiento.jpg)
 
-El primer ejercicio puede ser ajustar los valores de movimiento hacia adelante para que se mueva en línea recta. Es poco probable que con dos valores iguales lo haga, los motores no son idénticos.
+??? note "¿Eres capaz de hacer un giro de 90 grados?"
 
-El segundo ejercicio puede ser ajustar los valores de movimiento de giro para que rote un ángulo fijado, por ejemplo 90 grados o 180 grados.
+    Para hacerlo deberás ajustar el tiempo que el robot está girando en redondo.
 
-El tercer ejercicio puede ser encadenar órdenes para hacer figuras, por ejemplo un cuadrado, una estrella…
+    Si lo consigues, intenta hacer un giro de 180 grados.
 
-**Ejercicios más complejos:**  
-La función drive con dos valores positivos pero diferentes describe un arco. Probar a encadenar arcos para hacer un movimiento en eses. Probar a poner obstáculos y salvarlos serpenteando.
+??? note "Intenta que el robot dibuje la forma de un cuadrado."
 
-## Montaje de los sensores
+    Deberás concatenar avances y giros en redondo hacia un lado. Al estar en un bucle infinito solo necesitas dos instrucciones para conseguirlo.
 
-Los sensores tienen casi siempre dos pines de alimentación y uno o más pines de datos. La protoshield tiene en un lateral dos líneas para conectar la alimentación a positivo (5V) y negativo (GND).
+    Si lo consigues, prueba con otras formas geométricas.
 
-![Protoboard](img/protoshield.jpg)
+??? note "¿Saponconcho podrá moverse como una serpiente?"
 
-### Sensores de ultrasonidos
-Los sensores del ultrasonidos HC-SR04 tienen cuatro pienes: alimentación (VCC), masa (GND), trigger y echo. Estos dos últimos los unimos con una soldadura para ahorrarnos un cable, aunque tenemos que advertir que algunos modelos de algunos fabricantes no permiten esto, y al hacerlo no funcionan. Cablearemos con Dupont hembra-macho del sensor a la protoshield.
+    Concatenando varios giros en avance puedes conseguir que Sapoconcho se mueva en eses.
+
+    Prueba a ponerle obstáculos e intenta evitarlos serpenteando.
+
+## Sensores de ultrasonidos
+
+Los sensores del ultrasonidos permiten a Sapoconcho medir la distancia a los objetos que tiene delante.
+
+!!! info inline end "Sensor de ultrasonidos"
+
+    El sensor HC-SR04 tiene cuatro pienes: alimentación (VCC), trigger, echo y masa (GND), Trigger y echo los hemos unido con una soldadura para ahorrarnos un cable, aunque tenemos que advertir que es posible que modelos de algunos fabricantes no permitan esto, y al hacerlo no funcionen. 
 
 ![hc-sr04](img/hc-sr04.jpg)
 
-El montaje del soporte a la placa superior es sencillo, con un tornillo M3x10 y una tuerca. La placa tiene tres orificios, usaremos el central para montar un único sensor o los laterales para montar dos
+Los sensores tienen casi siempre dos pines de alimentación y uno o más pines de datos. La protoshield tiene en un lateral dos líneas para conectar la alimentación a positivo (5V) y negativo (GND).
+
+Cablearemos con cables Dupont hembra-macho del sensor a la protoshield.
+
+- VCC a uno de los conectores de 5V.
+- GND a uno de los de masa.
+- Trig o Echo al pin digital 2 del Arduino.
+
+![Protoboard](img/protoshield.jpg)
+
+El montaje del soporte a la placa superior es sencillo, con un tornillo M3x10 y una tuerca. La placa tiene tres orificios, usaremos el central para montar un único sensor o los laterales para montar dos.
 
 ![Montaje ultrasonidos](img/montaje_us.jpg)
 
-Para leer la distancia que mide el sensor usaremos una nueva función, que de nuevo podemos guardar en una pestaña nueva en el IDE para dejar más limpio el programa principal.
+Para leer la distancia que mide el sensor usaremos una nueva función, que de nuevo copiaremos y pegaremos al final de nuestro programa.
 
 ```c
-unsigned long sonar(int trig)
+unsigned long sonar(int pin)
 {
-  pinMode(trig, OUTPUT);
-  digitalWrite(trig,LOW); // trigger envia un pulso ultrasónico
+  double calibracion = 0.017; // Calibración del sensor
+  pinMode(pin, OUTPUT);
+  digitalWrite(pin,LOW); // Envía un pulso ultrasónico
   delayMicroseconds(5);
-  digitalWrite(trig, HIGH);
+  digitalWrite(pin, HIGH);
   delayMicroseconds(10);
-  pinMode(trig, INPUT);
-  unsigned long tiempo=pulseIn(trig, HIGH);    // echo espera a recibir la respuesta
-  unsigned long distancia= int(0.17*tiempo);  // fórmula para calcular la distancia
+  pinMode(pin, INPUT);
+  unsigned long tiempo=pulseIn(pin, HIGH); // Espera a recibir la respuesta
+  unsigned long distancia= int(calibracion*tiempo); // Calcula la distancia
   return distancia;
 }
 ```
 
-El uso es sencillo, la llamamos como
+Para usarla debemos llamarla pasándole el pin al que hemos conectado el sensor, en este caso el 2. Esta función nos devuelve un valor que guardaremos en una variable *distancia*.
 
 ```c
-long int distancia = sonar(pin);
+long int distancia = sonar(2);
 ```
 
-En donde le decimos a qué pin hemos conectado el sensor (en los siguientes programa utilizaremos el 2 y el 3), y la función nos devuelve la distancia al obstáculo en milímetros. [Este código](https://github.com/brico-labs/sapoconcho/blob/main/arduino/us_read.ino) permite leer el sensor y mostrar el resultado por el monitor serie de Arduino para comprobar que funciona.
+El siguiente código permite leer el sensor y mostrar el resultado en el ordenador para poder comprobar que funciona y calibrarlo. Sapoconcho nos enviará los datos a través del cable USB.
 
-Los montaremos con los soportes impresos con un tornillo y una tuerca.
+??? Código
+    ```c
+    void setup()
+    {
+      Serial.begin(9600);
+    }
 
-**Mantener la distancia**  
-Con un sensor de distancia montado de forma central probaremos la distancia a una pared. Si estamos aún lejos, avanzaremos. Si estamos muy cerca, retrocederemos para mantener la distancia. Si en vez de una pared ponemos la mano, probaremos a manejar 'a distancia' nuestro robot.
+    void loop()
+    {
+      unsigned long distancia = sonar(2); // invocamos a función de medir distancia
+      Serial.print("Distancia: "); // Enviamos los valores a la consola
+      Serial.print(distancia);
+      Serial.println(" cm");
+    }
+
+    unsigned long sonar(int pin)
+    {
+      double calibracion = 0.017; // Calibración del sensor
+      pinMode(pin, OUTPUT);
+      digitalWrite(pin,LOW); // Envía un pulso ultrasónico
+      delayMicroseconds(5);
+      digitalWrite(pin, HIGH);
+      delayMicroseconds(10);
+      pinMode(pin, INPUT);
+      unsigned long tiempo=pulseIn(pin, HIGH); // Espera a recibir la respuesta
+      unsigned long distancia= int(calibracion*tiempo); // Calcula la distancia
+      return distancia;
+    }
+    ```
+
+En el ordenador deberemos abrir el monitor serial que está en la barra superior en el margen derecho ![serial](img/serial.jpg).
+
+!!! Note ""
+
+    Al igual que con los motores, cada sensor es diferente y tendremos que calibrar el nuestro para que mida correctamente los centímetros. Puedes probar a ajustar la variable calibracion dentro de la función sonar para que los valores que te muestra sean más realistas.
 
 ![Sapoconcho 1 us](img/main_single_us.jpeg)
 
-El código principal (al que añadiremos con las funciones drive y sonar) es el siguiente:
+**Mantener la distancia** 
 
-```c
-void setup() {}
+Para utilizar el sensor combinado con el movimiento en Sapoconcho necesitaremos utilizar la instrucción *if - else*. En el siguiente programa comprobamos la distancia, si el obstáculo está lejos le decimos al robot que avance, si está cerca que retroceda.
 
-void loop() {
-  long int distancia = sonar(2);
-  if (distancia<100)
-  {
-    drive(150,150,50);
-  }
-  else
-  {
-    drive(-150,-150,50);
-  }
+??? Código
+    ```c
+    void setup() {
 
-}
-```
+    }
 
-Como diversión si estamos trabajando en grupo podemos poner todos los robots en fila y encenderlos a la vez a ver qué pasa.
+    void loop() {
+      long int distancia = sonar(2);
+      if (distancia<10){
+        drive(75,75,50);
+      }
+      else {
+        drive(-75,-75,50);
+      }
+    }
+
+    void drive(int izquierda, int derecha, int tiempo) 
+    {
+      //Arduino UNO y driver TB6612/DRV8833
+      const int AIN2 = 9; // PWMA
+      const int AIN1 = 8;
+      const int BIN1 = 7;
+      const int BIN2 = 6; // PWMB
+
+      pinMode(AIN1,OUTPUT);
+      pinMode(AIN2,OUTPUT);
+      pinMode(BIN1,OUTPUT);
+      pinMode(BIN2,OUTPUT);
+
+      izquierda=map(constrain(izquierda,-100,100),-100,100,-255,255);
+      derecha=map(constrain(derecha,-100,100),-100,100,-255,255);
+
+      digitalWrite(AIN1, izquierda<0);
+      analogWrite(AIN2, izquierda + 255 * (izquierda < 0));
+      digitalWrite(BIN1, derecha < 0);
+      analogWrite(BIN2, derecha + 255 * (derecha < 0));
+
+      delay(tiempo);
+    }
+
+    unsigned long sonar(int pin)
+    {
+      double calibracion = 0.017; // Calibración del sensor
+      pinMode(pin, OUTPUT);
+      digitalWrite(pin,LOW); // Envía un pulso ultrasónico
+      delayMicroseconds(5);
+      digitalWrite(pin, HIGH);
+      delayMicroseconds(10);
+      pinMode(pin, INPUT);
+      unsigned long tiempo=pulseIn(pin, HIGH); // Espera a recibir la respuesta
+      unsigned long distancia= int(calibracion*tiempo); // Calcula la distancia
+      return distancia;
+    }
+    ```
+
+Esto evitará que el robot choque con una pared hacia la que va de frente, ademássi en lugar de una pared ponemos la mano, conseguiremos manejar 'a distancia' nuestro robot.
+
+!!! Note ""
+
+    Como diversión si estamos trabajando en grupo podemos poner todos los robots en fila y encenderlos a la vez a ver qué pasa.
 
 **Evitar obstáculos**  
-Con dos sensores de distancia podemos ver por donde está más cerca el obstáculo y girar hacia el lado contrario evitándolo.
+
+Si a nuestro robot le ponemos dos sensores de distancia podemos ver por donde está el obstáculo más cercano y girar hacia el lado contrario evitándolo.
+
+??? Código
+    ```c
+    void setup() {
+    }
+
+    void loop() {
+      long int izquierda = sonar(2);
+      long int derecha = sonar(3);
+      long int distancia = min(izquierda, derecha);
+      if (distancia<10){
+        if (izquierda<derecha){
+          drive(75,-75,100);
+        }
+        else{
+          drive(-75,75,100);
+        }
+      }
+      else{
+        drive(75,75,50);
+      }
+    }
+
+    void drive(int izquierda, int derecha, int tiempo) 
+    {
+      //Arduino UNO y driver TB6612/DRV8833
+      const int AIN2 = 9; // PWMA
+      const int AIN1 = 8;
+      const int BIN1 = 7;
+      const int BIN2 = 6; // PWMB
+
+      pinMode(AIN1,OUTPUT);
+      pinMode(AIN2,OUTPUT);
+      pinMode(BIN1,OUTPUT);
+      pinMode(BIN2,OUTPUT);
+
+      izquierda=map(constrain(izquierda,-100,100),-100,100,-255,255);
+      derecha=map(constrain(derecha,-100,100),-100,100,-255,255);
+
+      digitalWrite(AIN1, izquierda<0);
+      analogWrite(AIN2, izquierda + 255 * (izquierda < 0));
+      digitalWrite(BIN1, derecha < 0);
+      analogWrite(BIN2, derecha + 255 * (derecha < 0));
+
+      delay(tiempo);
+    }
+
+    unsigned long sonar(int pin)
+    {
+      double calibracion = 0.017; // Calibración del sensor
+      pinMode(pin, OUTPUT);
+      digitalWrite(pin,LOW); // Envía un pulso ultrasónico
+      delayMicroseconds(5);
+      digitalWrite(pin, HIGH);
+      delayMicroseconds(10);
+      pinMode(pin, INPUT);
+      unsigned long tiempo=pulseIn(pin, HIGH); // Espera a recibir la respuesta
+      unsigned long distancia= int(calibracion*tiempo); // Calcula la distancia
+      return distancia;
+    }
+    ```
 
 ![Sapoconcho 2 us](img/dual_us.jpeg)
 
-El código ahora es:
+!!! Note ""
 
-```c
-void setup() {}
+    Esto también es posible hacerlo con un solo sensor, pero tendrás que parar el robot y girarlo para medir en que dirección está el terreno más despejado ¿Eres capaz de hacerlo?
 
-void loop() {
-  long int izquierda = sonar(2);
-  long int derecha = sonar(3);
-  long int distancia = min(izquierda, derecha);
-  if (distancia<100)
-  {
-    if (izquierda<derecha) // cambiar menor por mayor si gira hacia el obstaculo
-    {
-      drive(150,-150,100);
-    }
-    else
-    {
-      drive(-150,150,100);
-    }
-  }
-  else
-  {
-    drive(150,150,50);
-  }
+## Sensores de líneas
 
-}
-```
-
-### Sensores de líneas
-
-Los sensores infrarrojos de líneas, tanto con salida analógica como digital utilizan tres pines: alimentación (VCC), masa (GND) y señal. Debes revisar tu sensor, cada fabricante coloca los pines como quiere, y no tiene por qué coincidir con la foto.
+Los sensores infrarrojos de líneas, tanto con salida analógica como digital utilizan tres pines: alimentación (VCC), masa (GND) y señal. Debes revisar tu sensor, según el fabricante los sensores podrían estar en otro orden, no tiene por qué coincidir con la foto.
 
 ![tcrt5000r](img/tcrt5000r.jpg)
 
-Utilizaremos sensores basados en reflexión TCRT5000 con regulador (importante) que se montarán en el chasis inferior y se cablean a 5v, GND y dos entradas analógicas entre A0 y A5 (con cables Dupond H-M de 20cm).
+Utilizaremos sensores basados en reflexión TCRT5000 con regulador (importante) que se montarán en el chasis inferior y se cablean a 5v, GND y dos entradas analógicas entre A0 y A5 (con cables Dupont H-M de 20cm).
 
 ![Siguelineas](img/siguelineas.jpg)
 
 **Seguir una línea**
-Para leer los sensores no necesitamos una función extra, Arduino puede hacerlo con su propia analogRead(pin). El siguiente código lee los dos sensores y si uno de ellos está sobre la línea negra gira hacia el otro lado para evitarla (necesita la función drive).
+
+Para leer los sensores no necesitamos una función extra, Arduino puede hacerlo con su propia función analogRead(pin). El siguiente código lee los dos sensores y si uno de ellos está sobre la línea negra gira hacia el otro lado para evitarla (necesita la función drive).
 
 ```c
-void setup() {}
+void setup() {
+}
 
 void loop()
 {
-  if (analogRead(A0)<500) drive(-150,150,100);
-  if (analogRead(A1)<500) drive(150,-150,100);
-  drive(150,150,100);
+  if (analogRead(A0)<500){
+    drive(-75,75,100);
+  }
+  if (analogRead(A1)<500) {
+    drive(75,-75,100);
+  } 
+  drive(75,75,100);
 }
 ```
