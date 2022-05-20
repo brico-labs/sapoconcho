@@ -129,7 +129,7 @@ Los sensores del ultrasonidos permiten a Sapoconcho medir la distancia a los obj
 
 !!! info inline end "Sensor de ultrasonidos"
 
-    El sensor HC-SR04 tiene cuatro pienes: alimentación (VCC), trigger, echo y masa (GND), Trigger y echo los hemos unido con una soldadura para ahorrarnos un cable, aunque tenemos que advertir que es posible que modelos de algunos fabricantes no permitan esto, y al hacerlo no funcionen. 
+    El sensor HC-SR04 tiene cuatro pines: alimentación (VCC), trigger, echo y masa (GND), Trigger y echo los hemos unido con una soldadura para ahorrarnos un cable, aunque tenemos que advertir que es posible que modelos de algunos fabricantes no permitan esto, y al hacerlo no funcionen. 
 
 ![hc-sr04](img/hc-sr04.jpg)
 
