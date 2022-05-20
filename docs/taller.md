@@ -1,6 +1,6 @@
 # Preparar un taller de Sapoconcho
 
-El Sapoconcho fue concebido principalmente para impartir talleres de robótica. El público principal para el que está pensado es para niños de entre 11 y 18 años o formadores que luego utilizarán el Sapoconcho en sus clases. Es muy habitual y recomendable que si los niños son pequeños (11-14 años) realicen el taller acompañados por un adulto.
+Sapoconcho fue concebido principalmente para impartir talleres de robótica. El público principal para el que está pensado es para niños de entre 11 y 18 años o formadores que posteriormente utilizarán Sapoconcho en sus clases. Es muy habitual y recomendable que si los niños son pequeños (11-14 años) hagan el taller acompañados por un adulto.
 
 ## Duración del taller
 Basándonos en experiencias podemos indicar las siguientes duraciones:
@@ -8,13 +8,13 @@ Basándonos en experiencias podemos indicar las siguientes duraciones:
 - Montaje: 60 minutos
 - Programación movimiento: 45 minutos
 - Programación ultrasonidos: 45 minutos
-- Programación sigue-lineas: 45 minutos
+- Programación siguelineas: 45 minutos
 
 ## Preparativos previos
 
 ### Preparando los kits
 
-Las siguientes indicaciones pueden ahorrarnos problemas durante el taller
+Las siguientes indicaciones pueden ahorrarnos problemas durante el taller:
 
 - Preparar al menos un 1 kits extra por cada 10 por si faltan o fallan piezas en alguno.
 - Revisar los diámetros de los agujeros en las piezas impresas, principalmente los del eje de los motores que deben entrar justos.
