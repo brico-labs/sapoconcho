@@ -2,28 +2,44 @@
 
 Ahora que ya tienes tu Sapoconcho montado.. ¡vamos a programarlo!
 
-## Función de movimiento básica
-Para programar el Arduino con código escrito puedes utilizar la función de movimiento siguiente (copia y pega el código en el IDE).
+Lo primero que necesitas es [Arduino IDE](https://www.arduino.cc/en/software), el programa que te permitirá escribir el código en el robot. Una vez instalado conecta el Arduino al ordenador usando el cable USB de tu kit y abre Arduino IDE.
 
-El código tiene tres partes:
+![Arduino IDE](img/arduino_ide.jpg)
 
-En la primera -setup- se incluye la parte del programa que se ejecuta sólo una vez, al iniciar el Arduino.
-En la segunda -loop- es donde después escribirás el programa principal, que se ejecutará en bucle.
-En la tercera -drive- es donde se define la función (o subrutina) de movimiento para simplificar el programa principal.
-La función drive incluye la numeración y configuración de pines. Puede ponerse en una pestaña aparte en el IDE de Arduino, eso hará que el código principal con el setup y el loop se lea más fácil.
+En el menú *tools* selecciona:
+
+- Board: Arduino Uno
+- Puerto: el puerto USB en el que tienes conectado el Arduino.
+
+## Programando en Arduino
+Programar en Arduino es muy sencillo, tenemos dos funciones en las que escribir nuestro código:
+
+- Setup: el robot hará lo que escribas aquí cuando se encienda.
+- Loop: el robot hará esto continuamente una vez finalice el setup.
 
 ```c
 void setup() {
 
 }
 
-//programa principal
+
 void loop(){
 
 }
+```
 
-//función de movimiento de motores
-void drive(int L, int R, int t) //velocidad de las ruedas izquierda y derecha, positivo hacia delante, tiempo en milisegundos
+!!! Note ""
+
+    Truco: Lo que escribas después de una doble barra "//" no se ejecutará, puedes usarlo para poner anotaciones en el código.
+
+## Función de movimiento
+Para decirle al robot que se mueva vamos a usar una función *drive* que os damos a continuación (copia y pégala al final de tu código):
+
+```c
+// función de movimiento de motores
+// velocidad de las ruedas izquierda y derecha, positivo hacia delante, 
+// tiempo en milisegundos
+void drive(int L, int R, int t) 
 {
 //Arduino UNO y driver TB6612/DRV8833
   const int AIN2 = 9; // PWMA
@@ -50,6 +66,18 @@ void drive(int L, int R, int t) //velocidad de las ruedas izquierda y derecha, p
   delay(t);
 }
 ```
+Esta función nos permite decirle al robot la velocidad de la rueda derecha, rueda izquierda y un tiempo.
+
+Ahora debemos llamar a esta función, para ello prueba a copiar y pegar la siguiente linea dentro del *loop* de tu programa:
+```c
+drive(200,200,1000);
+```
+
+Ahora para enviar el código al robot debes pulsar el botón *upload* ![upload](img/upload.jpg).
+
+Verás una barra de progreso y en unos pocos segundos tu robot habrá recibido su primer código!
+
+Ahora desconecta el cable USB del Sapoconcho, conéctale las pilas y comprueba que avanza hacia delante.
 
 **Movimientos de prueba**  
 El uso de la función drive es sencillo. Se llama como drive (velocidad rueda izquierda, velocidad rueda derecha, tiempo) Las velocidades pueden estar entre -255 y 255. Positivo hacia delante, negativo hacia atrás. El tiempo en milisegundos.
