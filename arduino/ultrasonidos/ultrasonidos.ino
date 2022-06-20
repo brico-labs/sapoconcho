@@ -5,10 +5,10 @@ void setup() {
 void loop() {
   long int distancia = sonar(2);
   if (distancia<10){
-    drive(75,75,50);
+    drive(-100,-100,50);
   }
   else {
-    drive(-75,-75,50);
+    drive(100,100,50);
   }
 }
 
