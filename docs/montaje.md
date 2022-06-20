@@ -47,21 +47,21 @@ A continuación hay que pinchar el driver teniendo cuidado con que los pines y l
 ![cableado driver](img/cableado_driver.jpeg)
 
 **Cableado de los motores**  
-Necesitamos cuatro cables Dupont de 10cmm soldados en un extremos a los motores y con punta macho en el otro extremo para la protoshield. Pueden ir agrupados para hacer un montaje más elegante, aunque no es imprescindible. Tampoco es imprescindible, pero si una buena idea añadir un condensador cerámico de 0.1uF (código 104) en paralelo en cada motor.
+Necesitamos cuatro cables Dupont de 20cmm soldados en un extremos a los motores y con punta macho en el otro extremo para la protoshield. Pueden ir agrupados para hacer un montaje más elegante, aunque no es imprescindible. Tampoco es imprescindible, pero si una buena idea añadir un condensador cerámico de 0.1uF (código 104) en paralelo en cada motor.
 
 ![cable motores](img/cable_motores.jpeg)
 
-Los cables Dupont que vengan de los motores se conectarán ahora en los pines correspondientes. En este caso sí que coinciden los cuatro pines del driver DRV8833.
+Los cables Dupont que vengan de los motores se conectarán ahora en los pines correspondientes.
 
 ![Pines motores](img/montaje_8.jpg)
 
 Si al probar las funciones de movimiento alguna rueda gira al revés, puedes intercambiar los cables de ese motor.
 
-**Alimentación**
+**Alimentación**  
 Para alimentación utilizaremos un portapilas para 4 pilas AA. Y para que valga para cualquier proyecto, puedas usar pilas recargables y reduzcamos la contaminación añadiremos siempre un regulador dc-dc elevador para elevar la tensión de salida (step-up). El LM2587 y el XL6009 valen y tienen un tornillo para regular la tensión de salida; un buen valor es 7,5v.
 
 ![Alimentacion](img/alimentacion.jpeg)
 
-Las conexiones del step-up son muy sencillas: entrada positiva/negativa (IN+ rojo/IN- negro) desde el portapilas y salida positiva/negaviva (OUT+ rojo/OUT- negro) a la clavija. Además sacaremos un cable con un extremo Dupont macho para alimentar el driver antes del step-up, de IN+ a VM.
+Las conexiones del step-up son muy sencillas: entrada positiva/negativa (IN+ rojo/IN- negro) desde el portapilas y salida positiva/negaviva (OUT+ rojo/OUT- negro) a la clavija. Además sacaremos un cable con un extremo Dupont macho (bstante largo) para alimentar el driver antes del step-up, de IN+ a VM.
 
 ![Montaje completo](img/montaje_completo.jpeg)
