@@ -2,9 +2,10 @@
 
 Un kit de Sapoconcho es un paquete con todas las piezas necesarias para montar un Sapoconcho. Para hacerte uno necesitarás una serie de materiales que detallaremos a continuación:
 
+![kit](img/kit.jpg)
 
 ## Piezas imprimibles
-El chasis de Sapoconcho XL consta de las siguientes piezas:
+El chasis de Sapoconcho consta de las siguientes piezas:
 
 - Bases superior e inferior.
 - Soporte de motores (1 unidad).
@@ -35,6 +36,7 @@ Todas las piezas están en [este repositorio de Github](https://github.com/brico
 - Tuercas M3 (4 ud).
 - Cables Dupont M-H de 20mm y de 10mm.
 - Cable USB-A a USB-B
+- Cables de tres colores (rojo, negro y otro) para breadboard.
 
 Por si os es de utilidad, os dejamos una [lista de la compra en Amazon](https://www.amazon.es/hz/wishlist/ls/9FKST3X6WCM?viewType=list).
 

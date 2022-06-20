@@ -29,36 +29,33 @@ El chasis base tiene pocas piezas y el montaje es muy sencillo.
 ![Ruedas](img/montaje_5.jpg)
 
 
-## Montaje eléctrico/electrónico
-Arduino no puede operar directamente un motor. Necesita un intermediario o driver. Existen dos drivers de motores muy parecidos y válidos para Sapoconcho XL: el Toshiba TB6612 y el DRV8833. Aunque los pines no son iguales, el cableado y la programación hacen que sean intercambiables.
+## Montaje eléctrico
+Arduino no puede operar directamente un motor. Necesita un intermediario o driver. En este caso utilizaremos el DRV8833.
 
-**Cableado del driver**  
-La codificación de pines del driver TB6612 es la siguiente:
+!!! Note "Nota"
 
-![TB6612](img/TB6612.jpg)
-
-Para el driver DRV883 se tiene
+    Con una pequeña variación en el cableado, el driver Toshiba TB6612 también es compatible.
 
 ![drv8833](img/drv8833.jpg)
 
-Para conectar el driver vamos a usar cable rígido de colores cortado a medida. Las conexiones son las de la imagen. Aunque el color de los cables no influye en el funcionamiento, para la alimentación y masa (negativo) se suelen utilizar los colores rojo y negro.
+Para conectar el driver vamos a usar cable rígido de colores cortado a medida. Las conexiones son las de la imagen. Aunque el color de los cables no influye en el funcionamiento, para la alimentación y masa (tierra) se suelen utilizar los colores rojo y negro respectivamente.
 
-![drv8833](img/cableado.jpeg)
+![cableado](img/cableado.jpg)
 
 A continuación hay que pinchar el driver teniendo cuidado con que los pines y los cable coincidan como en la foto.
 
 ![cableado driver](img/cableado_driver.jpeg)
 
 **Cableado de los motores**  
-Necesitamos cuatro cables Dupont de 20cmm soldados en un extremos a los motores y con punta macho en el otro extremo para la protoshield. Pueden ir agrupados para hacer un montaje más elegante, aunque no es imprescindible. Tampoco es imprescindible, pero si una buena idea añadir un condensador cerámico de 0.1uF (código 104) en paralelo en cada motor.
+Necesitamos cuatro cables Dupont de 10cmm soldados en un extremos a los motores y con punta macho en el otro extremo para la protoshield. Pueden ir agrupados para hacer un montaje más elegante, aunque no es imprescindible. Tampoco es imprescindible, pero si una buena idea añadir un condensador cerámico de 0.1uF (código 104) en paralelo en cada motor.
 
 ![cable motores](img/cable_motores.jpeg)
 
-Los cables Dupont que vengan de los motores se conectarán ahora en los pines correspondientes. En este caso sí que coinciden los cuatro pines de los drivers TB6612 y DRV8833.
+Los cables Dupont que vengan de los motores se conectarán ahora en los pines correspondientes. En este caso sí que coinciden los cuatro pines del driver DRV8833.
 
 ![Pines motores](img/montaje_8.jpg)
 
-Si al probar las funciones de movimiento alguna rueda gira al revés, hay que intercambiar los cables de ese motor.
+Si al probar las funciones de movimiento alguna rueda gira al revés, puedes intercambiar los cables de ese motor.
 
 **Alimentación**
 Para alimentación utilizaremos un portapilas para 4 pilas AA. Y para que valga para cualquier proyecto, puedas usar pilas recargables y reduzcamos la contaminación añadiremos siempre un regulador dc-dc elevador para elevar la tensión de salida (step-up). El LM2587 y el XL6009 valen y tienen un tornillo para regular la tensión de salida; un buen valor es 7,5v.
