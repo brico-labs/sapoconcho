@@ -34,7 +34,7 @@ Es recomendable que los participantes traigan Arduino IDE instalado en sus port�
 
 ## Durante el taller
 
-Es recomendable tener a mano los siguientes materiales y herramientas por si fuesen necesarias:
+Es recomendable tener a mano los siguientes materiales y herramientas por si fuesen necesarias:  
 - Estación de soldadura (estañador, estaño y demás útiles)
 - Destornillador eléctrico con punta hexagonal
 - Cable para breadboard
