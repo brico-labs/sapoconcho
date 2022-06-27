@@ -2,6 +2,8 @@
 
 Sapoconcho fue concebido principalmente para impartir talleres de robótica. El público principal para el que está pensado es para niños de entre 11 y 18 años o formadores que posteriormente utilizarán Sapoconcho en sus clases. Es muy habitual y recomendable que si los niños son pequeños (11-14 años) hagan el taller acompañados por un adulto.
 
+![taller](img/taller.jpg)
+
 ## Duración del taller
 Basándonos en experiencias anteriores podemos indicar las siguientes duraciones:
 
@@ -19,6 +21,7 @@ Es posible alargar el taller o dividirlo en dos sesiones si se incluye la parte 
 Las siguientes indicaciones pueden ahorrarnos problemas durante el taller:
 
 - Preparar al menos un 1 kit extra por cada 10 por si faltan o fallan piezas en alguno.
+![kits](img/kits.jpg)
 - Revisar los diámetros de los agujeros en las piezas impresas, especialmente los del eje de los motores que deben entrar justos.
 - Soldar los pines del driver de motores.
 ![soldering](img/soldering.jpg)
