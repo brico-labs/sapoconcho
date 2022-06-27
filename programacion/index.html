@@ -1,0 +1,827 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sapoconcho is an open-source learning robot.">
+      
+      
+      
+        <link rel="canonical" href="https://sapoconcho.bricolabs.cc/programacion/">
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>Programación - Sapoconcho | Bricolabs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programacion-de-sapoconcho" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Sapoconcho | Bricolabs" class="md-header__button md-logo" aria-label="Sapoconcho | Bricolabs" data-md-component="logo">
+      
+  <img src="../img/logo_topbar.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sapoconcho | Bricolabs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programación
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/brico-labs/sapoconcho" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Sapoconcho's GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sapoconcho | Bricolabs" class="md-nav__button md-logo" aria-label="Sapoconcho | Bricolabs" data-md-component="logo">
+      
+  <img src="../img/logo_topbar.png" alt="logo">
+
+    </a>
+    Sapoconcho | Bricolabs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/brico-labs/sapoconcho" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Sapoconcho's GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../historia/" class="md-nav__link">
+        Historia
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kit/" class="md-nav__link">
+        Kit
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../montaje/" class="md-nav__link">
+        Montaje
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Programación
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Programación
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#programando-en-arduino" class="md-nav__link">
+    Programando en Arduino
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcion-de-movimiento" class="md-nav__link">
+    Función de movimiento
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensores-de-ultrasonidos" class="md-nav__link">
+    Sensores de ultrasonidos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensores-de-lineas" class="md-nav__link">
+    Sensores de líneas
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taller/" class="md-nav__link">
+        Taller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipo/" class="md-nav__link">
+        Equipo
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#programando-en-arduino" class="md-nav__link">
+    Programando en Arduino
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcion-de-movimiento" class="md-nav__link">
+    Función de movimiento
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensores-de-ultrasonidos" class="md-nav__link">
+    Sensores de ultrasonidos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensores-de-lineas" class="md-nav__link">
+    Sensores de líneas
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="programacion-de-sapoconcho">Programación de Sapoconcho</h1>
+<p>Ahora que ya tienes tu Sapoconcho montado.. ¡vamos a programarlo!</p>
+<p>Lo primero que necesitas es <a href="https://www.arduino.cc/en/software">Arduino IDE</a>, el programa que te permitirá escribir el código en el robot. Una vez instalado conecta el Arduino al ordenador usando el cable USB de tu kit y abre Arduino IDE.</p>
+<p><img alt="Arduino IDE" src="../img/arduino_ide.jpg" /></p>
+<p>En el menú <em>tools</em> selecciona:</p>
+<ul>
+<li>Board: Arduino Uno</li>
+<li>Puerto: el puerto USB en el que tienes conectado el Arduino.</li>
+</ul>
+<h2 id="programando-en-arduino">Programando en Arduino</h2>
+<p>Programar en Arduino es muy sencillo, tenemos dos funciones en las que escribir nuestro código:</p>
+<ul>
+<li>Setup: el robot hará lo que escribas aquí cuando se encienda.</li>
+<li>Loop: el robot hará esto continuamente una vez finalice el setup.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Truco</p>
+<p>Lo que escribas después de una doble barra "//" no se ejecutará, puedes usarlo para poner anotaciones en el código.</p>
+</div>
+<h2 id="funcion-de-movimiento">Función de movimiento</h2>
+<p>Para decirle al robot que se mueva vamos a usar una función <em>drive</em> que os damos a continuación (copia y pégala al final de tu código):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Drive permite manejar los motores</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// Izquierda y derecha admite valores de -100 a 100</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// Tiempo en milisegundos</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">izquierda</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">derecha</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tiempo</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="c1">//Arduino UNO y driver TB6612/DRV8833</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="c1">// PWMA</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AIN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BIN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// PWMB</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">AIN1</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">AIN2</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BIN1</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BIN2</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="n">izquierda</span><span class="o">=</span><span class="n">map</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">izquierda</span><span class="p">,</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">-255</span><span class="p">,</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="n">derecha</span><span class="o">=</span><span class="n">map</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">derecha</span><span class="p">,</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">-255</span><span class="p">,</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">AIN1</span><span class="p">,</span><span class="w"> </span><span class="n">izquierda</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">AIN2</span><span class="p">,</span><span class="w"> </span><span class="n">izquierda</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">izquierda</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">BIN1</span><span class="p">,</span><span class="w"> </span><span class="n">derecha</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">BIN2</span><span class="p">,</span><span class="w"> </span><span class="n">derecha</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">derecha</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">tiempo</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Esta función nos permite decirle al robot la velocidad de la rueda izquierda, rueda derecha y un tiempo. La velocidad de cada rueda admite valores de -100 a 100. El tiempo debemos indicarlo en milisegundos (1 segundo son 1000).</p>
+<p>Ahora debemos llamar a esta función, para ello copia y pegar la siguiente linea dentro del <em>loop</em> de tu programa:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">drive</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+<p>Para enviar el código al robot debes pulsar el botón <em>upload</em> <img alt="upload" src="../img/upload.jpg" />.</p>
+<p>Verás una barra de progreso y en unos pocos segundos ¡tu robot habrá recibido su primer código!</p>
+<p>Ahora desconecta el cable USB del Sapoconcho, ponle la alimentación de las pilas y comprueba que avanza hacia delante.</p>
+<details class="note">
+<summary>¿Sapoconcho avanza en linea recta?</summary>
+<p>Probablemente no.. esto se debe a que no existen dos motores exactamente iguales en el mundo y aunque les ordenemos ir a la misma velocidad no podrán. Intenta ajustar los valores <em>izquierda</em> y <em>derecha</em> para que tu sapoconcho avance recto.</p>
+</details>
+<p><strong>Movimientos de prueba</strong></p>
+<p>Habrás notado que aunque le hemos puesto que avance un segundo Sapoconcho no para. Prueba a introducir una segunda instrucción a continuación de la anterior para indicar a sapoconcho que pare:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">drive</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Si le envías este programa a Sapoconcho ahora verás que camina y para continuamente, ¡Esta es la mágia de la función <em>loop</em>! </p>
+<details class="note">
+<summary>¿Se te ocurre como hacer que pare definitivamente?</summary>
+<p>¡Exacto! En lugar de poner el código en el <em>loop</em> muévelo al <em>setup</em>, de esta forma sólo seguirá tus instrucciones una vez.</p>
+</details>
+<p>Ahora puedes probar a jugar con las distintas opciones que nos da la función <em>drive</em> y encadenarlas para conseguir una secuencia de movimientos:</p>
+<ul>
+<li>Movimiento hacia adelante: izquierda y derecha con valores positivos.</li>
+<li>Movimiento hacia atrás: izquierda y derecha con valores negativos.</li>
+<li>Giro en redondo: izquierda positivo, derecha negativo o viceversa.</li>
+<li>Giro en avance: valor de una rueda mayor que el de la otra.</li>
+<li>Parar: valores de izquierda y derecha en 0.</li>
+</ul>
+<p><img alt="Movimiento" src="../img/movimiento.jpg" /></p>
+<details class="note">
+<summary>¿Eres capaz de hacer un giro de 90 grados?</summary>
+<p>Para hacerlo deberás ajustar el tiempo que el robot está girando en redondo.</p>
+<p>Si lo consigues, intenta hacer un giro de 180 grados.</p>
+</details>
+<details class="note">
+<summary>Intenta que el robot dibuje la forma de un cuadrado.</summary>
+<p>Deberás concatenar avances y giros en redondo hacia un lado. Al estar en un bucle infinito solo necesitas dos instrucciones para conseguirlo.</p>
+<p>Si lo consigues, prueba con otras formas geométricas.</p>
+</details>
+<details class="note">
+<summary>¿Saponconcho podrá moverse como una serpiente?</summary>
+<p>Concatenando varios giros en avance puedes conseguir que Sapoconcho se mueva en eses.</p>
+<p>Prueba a ponerle obstáculos e intenta evitarlos serpenteando.</p>
+</details>
+<h2 id="sensores-de-ultrasonidos">Sensores de ultrasonidos</h2>
+<p>Los sensores del ultrasonidos permiten a Sapoconcho medir la distancia a los objetos que tiene delante.</p>
+<div class="admonition info inline end">
+<p class="admonition-title">Sensor de ultrasonidos</p>
+<p>El sensor HC-SR04 tiene cuatro pines: alimentación (VCC), trigger, echo y masa (GND), Trigger y echo los hemos unido con una soldadura para ahorrarnos un cable, aunque tenemos que advertir que es posible que modelos de algunos fabricantes no permitan esto, y al hacerlo no funcionen. </p>
+</div>
+<p><img alt="hc-sr04" src="../img/hc-sr04.jpg" /></p>
+<p>Los sensores tienen casi siempre dos pines de alimentación y uno o más pines de datos. La protoshield tiene en un lateral dos líneas para conectar la alimentación a positivo (5V) y negativo (GND).</p>
+<p>Cablearemos con cables Dupont hembra-macho del sensor a la protoshield.</p>
+<ul>
+<li>VCC a uno de los conectores de 5V.</li>
+<li>GND a uno de los de masa.</li>
+<li>Trig o Echo al pin digital 2 del Arduino.</li>
+</ul>
+<p><img alt="Protoboard" src="../img/protoshield.jpg" /></p>
+<p>El montaje del soporte a la placa superior es sencillo, con un tornillo M3x10 y una tuerca. La placa tiene tres orificios, usaremos el central para montar un único sensor o los laterales para montar dos.</p>
+<p><img alt="Montaje ultrasonidos" src="../img/montaje_us.jpg" /></p>
+<p>Para leer la distancia que mide el sensor usaremos una nueva función, que de nuevo copiaremos y pegaremos al final de nuestro programa.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">sonar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pin</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">calibracion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.017</span><span class="p">;</span><span class="w"> </span><span class="c1">// Calibración del sensor</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="c1">// Envía un pulso ultrasónico</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tiempo</span><span class="o">=</span><span class="n">pulseIn</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// Espera a recibir la respuesta</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">distancia</span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">calibracion</span><span class="o">*</span><span class="n">tiempo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Calcula la distancia</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">distancia</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Para usarla debemos llamarla pasándole el pin al que hemos conectado el sensor, en este caso el 2. Esta función nos devuelve un valor que guardaremos en una variable <em>distancia</em>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">distancia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sonar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>El siguiente código permite leer el sensor y mostrar el resultado en el ordenador para poder comprobar que funciona y calibrarlo. Sapoconcho nos enviará los datos a través del cable USB.</p>
+<details class="código">
+<summary>Código</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">distancia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sonar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// invocamos a función de medir distancia</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Distancia: &quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Enviamos los valores a la consola</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">distancia</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; cm&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">sonar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pin</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">calibracion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.017</span><span class="p">;</span><span class="w"> </span><span class="c1">// Calibración del sensor</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="c1">// Envía un pulso ultrasónico</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tiempo</span><span class="o">=</span><span class="n">pulseIn</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// Espera a recibir la respuesta</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">distancia</span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">calibracion</span><span class="o">*</span><span class="n">tiempo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Calcula la distancia</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">distancia</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<p>En el ordenador deberemos abrir el monitor serial que está en la barra superior en el margen derecho <img alt="serial" src="../img/serial.jpg" />.</p>
+<div class="admonition note">
+<p>Al igual que con los motores, cada sensor es diferente y tendremos que calibrar el nuestro para que mida correctamente los centímetros. Puedes probar a ajustar la variable calibracion dentro de la función sonar para que los valores que te muestra sean más realistas.</p>
+</div>
+<p><img alt="Sapoconcho 1 us" src="../img/main_single_us.jpeg" /></p>
+<p><strong>Mantener la distancia</strong> </p>
+<p>Para utilizar el sensor combinado con el movimiento en Sapoconcho necesitaremos utilizar la instrucción <em>if - else</em>. En el siguiente programa comprobamos la distancia, si el obstáculo está lejos le decimos al robot que avance, si está cerca que retroceda.</p>
+<details class="código">
+<summary>Código</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">distancia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sonar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distancia</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="n">drive</span><span class="p">(</span><span class="mi">-75</span><span class="p">,</span><span class="mi">-75</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="n">drive</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="kt">void</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">izquierda</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">derecha</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tiempo</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">  </span><span class="c1">//Arduino UNO y driver TB6612/DRV8833</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="c1">// PWMA</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AIN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BIN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// PWMB</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">AIN1</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">AIN2</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BIN1</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BIN2</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">  </span><span class="n">izquierda</span><span class="o">=</span><span class="n">map</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">izquierda</span><span class="p">,</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">-255</span><span class="p">,</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">  </span><span class="n">derecha</span><span class="o">=</span><span class="n">map</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">derecha</span><span class="p">,</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">-255</span><span class="p">,</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">AIN1</span><span class="p">,</span><span class="w"> </span><span class="n">izquierda</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">AIN2</span><span class="p">,</span><span class="w"> </span><span class="n">izquierda</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">izquierda</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">BIN1</span><span class="p">,</span><span class="w"> </span><span class="n">derecha</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">BIN2</span><span class="p">,</span><span class="w"> </span><span class="n">derecha</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">derecha</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">tiempo</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">sonar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pin</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">calibracion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.017</span><span class="p">;</span><span class="w"> </span><span class="c1">// Calibración del sensor</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="c1">// Envía un pulso ultrasónico</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tiempo</span><span class="o">=</span><span class="n">pulseIn</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// Espera a recibir la respuesta</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">distancia</span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">calibracion</span><span class="o">*</span><span class="n">tiempo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Calcula la distancia</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">distancia</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<p>Esto evitará que el robot choque con una pared hacia la que va de frente, ademássi en lugar de una pared ponemos la mano, conseguiremos manejar 'a distancia' nuestro robot.</p>
+<div class="admonition note">
+<p>Como diversión si estamos trabajando en grupo podemos poner todos los robots en fila y encenderlos a la vez a ver qué pasa.</p>
+</div>
+<p><strong>Evitar obstáculos</strong>  </p>
+<p>Si a nuestro robot le ponemos dos sensores de distancia podemos ver por donde está el obstáculo más cercano y girar hacia el lado contrario evitándolo.</p>
+<details class="código">
+<summary>Código</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">izquierda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sonar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">derecha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sonar</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">distancia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">izquierda</span><span class="p">,</span><span class="w"> </span><span class="n">derecha</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distancia</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">izquierda</span><span class="o">&lt;</span><span class="n">derecha</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="n">drive</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="mi">-75</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">      </span><span class="n">drive</span><span class="p">(</span><span class="mi">-75</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="n">drive</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="kt">void</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">izquierda</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">derecha</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tiempo</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">  </span><span class="c1">//Arduino UNO y driver TB6612/DRV8833</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="c1">// PWMA</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AIN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BIN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// PWMB</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">AIN1</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">AIN2</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BIN1</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BIN2</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="w">  </span><span class="n">izquierda</span><span class="o">=</span><span class="n">map</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">izquierda</span><span class="p">,</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">-255</span><span class="p">,</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="w">  </span><span class="n">derecha</span><span class="o">=</span><span class="n">map</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">derecha</span><span class="p">,</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mi">-100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">-255</span><span class="p">,</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">AIN1</span><span class="p">,</span><span class="w"> </span><span class="n">izquierda</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">AIN2</span><span class="p">,</span><span class="w"> </span><span class="n">izquierda</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">izquierda</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">BIN1</span><span class="p">,</span><span class="w"> </span><span class="n">derecha</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">BIN2</span><span class="p">,</span><span class="w"> </span><span class="n">derecha</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">derecha</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">tiempo</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">sonar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pin</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">calibracion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.017</span><span class="p">;</span><span class="w"> </span><span class="c1">// Calibración del sensor</span>
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="c1">// Envía un pulso ultrasónico</span>
+<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a><span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tiempo</span><span class="o">=</span><span class="n">pulseIn</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// Espera a recibir la respuesta</span>
+<a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">distancia</span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="n">calibracion</span><span class="o">*</span><span class="n">tiempo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Calcula la distancia</span>
+<a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">distancia</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</details>
+<p><img alt="Sapoconcho 2 us" src="../img/dual_us.jpeg" /></p>
+<div class="admonition note">
+<p>Esto también es posible hacerlo con un solo sensor, pero tendrás que parar el robot y girarlo para medir en que dirección está el terreno más despejado ¿Eres capaz de hacerlo?</p>
+</div>
+<h2 id="sensores-de-lineas">Sensores de líneas</h2>
+<p>Los sensores infrarrojos de líneas, tanto con salida analógica como digital utilizan tres pines: alimentación (VCC), masa (GND) y señal. Debes revisar tu sensor, según el fabricante los sensores podrían estar en otro orden, no tiene por qué coincidir con la foto.</p>
+<p><img alt="tcrt5000r" src="../img/tcrt5000r.jpg" /></p>
+<p>Utilizaremos sensores basados en reflexión TCRT5000 con regulador (importante) que se montarán en el chasis inferior y se cablean a 5v, GND y dos entradas analógicas entre A0 y A5 (con cables Dupont H-M de 20cm).</p>
+<p><img alt="Siguelineas" src="../img/siguelineas.jpg" /></p>
+<p><strong>Seguir una línea</strong></p>
+<p>Para leer los sensores no necesitamos una función extra, Arduino puede hacerlo con su propia función analogRead(pin). El siguiente código lee los dos sensores y si uno de ellos está sobre la línea negra gira hacia el otro lado para evitarla (necesita la función drive).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">500</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="n">drive</span><span class="p">(</span><span class="mi">-75</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">analogRead</span><span class="p">(</span><span class="n">A1</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">drive</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="mi">-75</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">  </span><span class="n">drive</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../montaje/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Montaje" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Montaje
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../taller/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Taller" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Taller
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+    
+  </body>
+</html>
